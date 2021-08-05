@@ -1,6 +1,6 @@
 language: node_js
 node_js:
-  - "13"
+  - 7
 
 services:
   - docker
@@ -11,7 +11,7 @@ before_script:
 
 script:
   - docker --version 
-  - docker-compose up
+  - docker-compose build
   - docker tag udagram-frontend:local jonaspdev/udagram-frontend:v1
   - docker tag udagram-api-user jonaspdev/udagram-api-user:v1
   - docker tag udagram-api-feed jonaspdev/udagram-api-feed:v1
