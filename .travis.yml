@@ -22,4 +22,7 @@ script:
 
 after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-  - docker-compose -f docker-compose-build.yaml push
+  - docker push jonaspdev/udagram-frontend:v1
+  - docker push jonaspdev/udagram-api-user:v1
+  - docker push jonaspdev/udagram-api-feed:v1
+  - docker push jonaspdev/reverseproxy:v1
